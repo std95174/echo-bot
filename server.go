@@ -58,9 +58,7 @@ func main() {
 							log.Print(err)
 						}
 					} else if message.Text == "大聲說出想對我們說的話吧！" {
-						if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("收到你想對我們說的話囉🥸\n祝平安順心。")).Do(); err != nil {
-							log.Print(err)
-						}
+						// do nothing
 					} else if message.Text == "婚紗照" {
 						picture1 := linebot.NewImageMessage("https://images.unsplash.com/photo-1606800052052-a08af7148866?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", "https://images.unsplash.com/photo-1606800052052-a08af7148866?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80")
 						picture2 := linebot.NewImageMessage("https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")
@@ -70,7 +68,7 @@ func main() {
 							log.Print(err)
 						}
 					} else {
-						if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.Text)).Do(); err != nil {
+						if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("收到你想對我們說的話囉🥸\n祝平安順心。")).Do(); err != nil {
 							log.Print(err)
 						}
 					}
