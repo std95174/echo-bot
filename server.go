@@ -48,17 +48,17 @@ func main() {
 				case *linebot.TextMessage:
 					if message.Text == "時間與地點" {
 						replyTextMessage := linebot.NewTextMessage(fmt.Sprintf("Hi hi, Elaine 與 豆哥的婚禮將在 2022/12/17 於寒舍艾麗酒店\n11073台灣台北市信義區松高路18號舉辦\n歡迎一同共襄盛舉！"))
-						replyLocationMessage := linebot.LocationMessage{
-							Title:     "寒舍艾麗酒店",
-							Address:   "11073台灣台北市信義區松高路18號",
-							Latitude:  25.038710596389304,
-							Longitude: 121.56735086587742,
-						}
-						if _, err = bot.ReplyMessage(event.ReplyToken, replyTextMessage, &replyLocationMessage).Do(); err != nil {
+						replyLocationMessage := linebot.NewLocationMessage(
+							"寒舍艾麗酒店",
+							"11073台灣台北市信義區松高路18號",
+							25.038710596389304,
+							121.56735086587742,
+						)
+						if _, err = bot.ReplyMessage(event.ReplyToken, replyTextMessage, replyLocationMessage).Do(); err != nil {
 							log.Print(err)
 						}
 					} else {
-						if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.Text), linebot.NewTextMessage("ggg")).Do(); err != nil {
+						if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.Text)).Do(); err != nil {
 							log.Print(err)
 						}
 					}
