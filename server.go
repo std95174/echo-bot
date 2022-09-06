@@ -15,7 +15,6 @@
 package main
 
 import (
-	"fmt"
 	"github.com/line/line-bot-sdk-go/v7/linebot"
 	"log"
 	"net/http"
@@ -50,9 +49,7 @@ func main() {
 						log.Print(err)
 					}
 				case *linebot.StickerMessage:
-					replyMessage := fmt.Sprintf(
-						"sticker id is %s, stickerResourceType is %s", message.StickerID, message.StickerResourceType)
-					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(replyMessage)).Do(); err != nil {
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewStickerMessage("1", "1")).Do(); err != nil {
 						log.Print(err)
 					}
 				}
