@@ -62,7 +62,7 @@ func main() {
 	// This is just sample code.
 	// For actual use, you must support HTTPS by using `ListenAndServeTLS`, a reverse proxy or something else.
 	log.Printf("About to listen on %s. Go to https://127.0.0.1:%s/", os.Getenv("PORT"), os.Getenv("PORT"))
-	if err := http.ListenAndServeTLS(":"+os.Getenv("PORT"), "cert.pem", "key.pem", nil); err != nil {
+	if err := http.ListenAndServe(":"+os.Getenv("PORT"), nil); err != nil {
 		log.Fatal(err)
 	}
 }
