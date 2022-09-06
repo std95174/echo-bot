@@ -66,8 +66,7 @@ func main() {
 						picture2 := linebot.NewImageMessage("https://unsplash.com/photos/M2T1j-6Fn8w", "https://unsplash.com/photos/M2T1j-6Fn8w")
 						picture3 := linebot.NewImageMessage("https://unsplash.com/photos/K8KiCHh4WU4", "https://unsplash.com/photos/K8KiCHh4WU4")
 						picture4 := linebot.NewImageMessage("https://unsplash.com/photos/PuXtB1B4zL8", "https://unsplash.com/photos/PuXtB1B4zL8")
-						picture5 := linebot.NewImageMessage("https://unsplash.com/photos/NO8Sj4dKE8k", "https://unsplash.com/photos/NO8Sj4dKE8k")
-						if _, err = bot.ReplyMessage(event.ReplyToken, picture1, picture2, picture3, picture4, picture5, linebot.NewTextMessage("更多照片請看 https://unsplash.com/")).Do(); err != nil {
+						if _, err = bot.ReplyMessage(event.ReplyToken, picture1, picture2, picture3, picture4, linebot.NewTextMessage("更多照片請看 https://unsplash.com/")).Do(); err != nil {
 							log.Print(err)
 						}
 					} else {
