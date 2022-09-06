@@ -3,9 +3,6 @@ services:
   web:
     build: .
     ports:
-      - "80:80"
-      - "443:443"
-    environment:
-      - CHANNEL_SECRET=${CHANNEL_SECRET}
-      - CHANNEL_TOKEN=${CHANNEL_TOKEN}
-      - PORT=${PORT}
+      - "8080:8080"
+    env_file:
+      - .env
