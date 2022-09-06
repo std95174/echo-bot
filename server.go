@@ -57,9 +57,10 @@ func main() {
 						if _, err = bot.ReplyMessage(event.ReplyToken, replyTextMessage, &replyLocationMessage).Do(); err != nil {
 							log.Print(err)
 						}
-					}
-					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.Text), linebot.NewTextMessage("ggg")).Do(); err != nil {
-						log.Print(err)
+					} else {
+						if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.Text), linebot.NewTextMessage("ggg")).Do(); err != nil {
+							log.Print(err)
+						}
 					}
 				case *linebot.StickerMessage:
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewStickerMessage("1", "1")).Do(); err != nil {
