@@ -57,11 +57,11 @@ func main() {
 						if _, err = bot.ReplyMessage(event.ReplyToken, replyTextMessage, replyLocationMessage).Do(); err != nil {
 							log.Print(err)
 						}
-					} else if message.Text == "想對我們說的話" {
+					} else if message.Text == "大聲說出想對我們說的話吧！" {
 						if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("收到你想對我們說的話囉🥸\n祝平安順心。")).Do(); err != nil {
 							log.Print(err)
 						}
-					} else if message.Text == "婚紗照搶先看" {
+					} else if message.Text == "婚紗照" {
 						picture1 := linebot.NewImageMessage("https://unsplash.com/photos/8vaQKYnawHw", "https://unsplash.com/photos/8vaQKYnawHw")
 						picture2 := linebot.NewImageMessage("https://unsplash.com/photos/M2T1j-6Fn8w", "https://unsplash.com/photos/M2T1j-6Fn8w")
 						picture3 := linebot.NewImageMessage("https://unsplash.com/photos/K8KiCHh4WU4", "https://unsplash.com/photos/K8KiCHh4WU4")
